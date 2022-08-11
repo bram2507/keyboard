@@ -7,15 +7,6 @@ import { Key } from "./../Buttons/key";
 export const Keyboard = () => {
   // let pressResult = "";
   const [inputText, updateInputText] = useState("");
-  // useEffect(() => {
-  //   document.addEventListener("keypress", keyPress, true);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
-  // const keyPress = (e) => {
-  //   pressResult += e.key;
-  //   updateInputText(pressResult);
-  // };
 
   const getInputText = (text) => {
     let result = inputText;

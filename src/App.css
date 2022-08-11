@@ -37,7 +37,7 @@
   width: 85%;
   min-height: 50vh;
   flex-direction: column;
-  border: 1px solid lightgray;
+  border: 2px solid lightgray;
   border-radius: 5px;
 }
 
@@ -58,7 +58,7 @@
   width: 60%;
   height: 30px;
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 2px solid lightgray;
   padding: 2vh;
   margin-top: 2vh;
 }
@@ -88,7 +88,7 @@
   width: 82px;
   height: 75px;
   border-radius: 5px;
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
   background-color: aliceblue;
   margin: 1vh;
 }
@@ -100,7 +100,7 @@
     width: 82px;
     height: 75px;
     border-radius: 5px;
-    border: 1px solid lightseagreen;
+    border: 2px solid lightseagreen;
     background-color: aliceblue;
     margin: 1vh;
   
