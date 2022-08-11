@@ -1,10 +1,10 @@
 import "./App.css";
 import "./componets/Buttons/key";
-import { keyboard } from "./componets/Keyboard/keyboard";
+import { Keyboard } from "./componets/Keyboard/keyboard";
 import "./componets/Result/result";
 
-function App() {
-  return keyboard();
-}
+const App = () => {
+  return Keyboard();
+};
 
 export default App;
