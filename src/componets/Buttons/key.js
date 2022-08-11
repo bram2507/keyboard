@@ -6,18 +6,48 @@ const secondRowLetters = ["a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ"];
 const thirdRowLetters = ["z", "x", "c", "v", "b", "n", "m"];
 
 export const Key = (getInputText) => {
-  const [classKey, setClass] = useState("keyboard_container__item-value");
+  const [classKey, setClass] = useState([
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+    "item-value",
+  ]);
+
   return (
     <div className="keyboard_contanier">
       <div className="keyboard_container__item">
-        {firstRowLetters.map((e) => {
+        {firstRowLetters.map((e, index) => {
           return (
             <div
               onClick={() => {
                 getInputText(e);
-                setClass("item-value--focus");
+
+                setClass(
+                  classKey.map((e, i) => {
+                    if (i === index) {
+                      e = "item-value--focus";
+                    }
+                    return e;
+                  })
+                );
+                setTimeout(() => {
+                  setClass(
+                    classKey.map((e, i) => {
+                      if (i === index) {
+                        e = "item-value";
+                      }
+                      return e;
+                    })
+                  );
+                }, 1000);
               }}
-              className={classKey}
+              className={classKey[index]}
               key={e}
             >
               {e}

@@ -1,8 +1,6 @@
 //React imports
 import React from "react";
 import { useState } from "react";
-
-// import { useEffect } from "react";
 //Created Imports
 import { Key } from "./../Buttons/key";
 
