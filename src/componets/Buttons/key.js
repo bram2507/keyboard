@@ -1,11 +1,12 @@
-import { React } from "react";
+import { React, useState } from "react";
 
 const firstRowLetters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
+
 const secondRowLetters = ["a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ"];
 const thirdRowLetters = ["z", "x", "c", "v", "b", "n", "m"];
 
 export const Key = (getInputText) => {
-  let className = "keyboard_container__item-value";
+  const [classKey, setClass] = useState("keyboard_container__item-value");
   return (
     <div className="keyboard_contanier">
       <div className="keyboard_container__item">
@@ -13,10 +14,10 @@ export const Key = (getInputText) => {
           return (
             <div
               onClick={() => {
-                console.log(e);
                 getInputText(e);
+                setClass("item-value--focus");
               }}
-              className={className}
+              className={classKey}
               key={e}
             >
               {e}
@@ -31,7 +32,7 @@ export const Key = (getInputText) => {
               onClick={() => {
                 getInputText(e);
               }}
-              className={className}
+              className={classKey}
               key={e}
             >
               {e}
@@ -44,10 +45,9 @@ export const Key = (getInputText) => {
           return (
             <div
               onClick={() => {
-                console.log(e);
                 getInputText(e);
               }}
-              className={className}
+              className={classKey}
               key={e}
             >
               {e}
