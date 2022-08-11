@@ -4,20 +4,26 @@ import React, { useState } from "react";
 import { Key } from "./../Buttons/key";
 
 export const Keyboard = () => {
-  const [cosas, setCosas] = useState();
-  const getValue = (text) => {
-    setCosas(text);
+  const [inputText, updateInputText] = useState("");
+  const getInputText = (text) => {
+    let result = inputText;
+    result += text;
+    updateInputText(result);
   };
+
   return (
     <div className="keyboard">
       <div className="result_container">
-        <div className="result_contanier__value">{cosas}</div>
+        <div className="result_contanier__value">{inputText}</div>
+        <div>
+          <h1>Result</h1>
+        </div>
       </div>
 
       <div className="keyboard_contanier">
-        {Key(getValue)}
+        {Key(getInputText)}
         <div>
-          <h2>Keyboard</h2>
+          <h1>Keyboard</h1>
         </div>
       </div>
       <div></div>
