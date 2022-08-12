@@ -132,6 +132,39 @@ const thirdRowPrint = (setClass3, classKey3, getInputText) => {
     </div>
   );
 };
+const spaceKey = (spaceBarClass, getInputText, setSpaceBarClass) => {
+  return (
+    <button
+      onClick={() => {
+        getInputText(" ");
+        setSpaceBarClass("keyboard_container__item__action--spacebar__active");
+        setTimeout(() => {
+          setSpaceBarClass(
+            "keyboard_container__item__action--spacebar__inactive"
+          );
+        }, 100);
+      }}
+      className={spaceBarClass}
+    ></button>
+  );
+};
+
+const deleteKey = (deleteClass, getInputText, setDeleteClass) => {
+  return (
+    <button
+      onClick={() => {
+        getInputText("backspace");
+        setDeleteClass("keyboard_container__item__action--delete__active");
+        setTimeout(() => {
+          setDeleteClass("keyboard_container__item__action--delete__inactive");
+        }, 100);
+      }}
+      className={deleteClass}
+    >
+      Eliminar
+    </button>
+  );
+};
 
 const fourRowPrint = (
   deleteClass,
@@ -143,39 +176,14 @@ const fourRowPrint = (
   return (
     <div className="keyboard_container__item">
       <div className="keyboard_container__item__action">
-        <button
-          onClick={() => {
-            getInputText(" ");
-            setSpaceBarClass(
-              "keyboard_container__item__action--spacebar__active"
-            );
-            setTimeout(() => {
-              setSpaceBarClass(
-                "keyboard_container__item__action--spacebar__inactive"
-              );
-            }, 100);
-          }}
-          className={spaceBarClass}
-        ></button>
-        <button
-          onClick={() => {
-            getInputText("backspace");
-            setDeleteClass("keyboard_container__item__action--delete__active");
-            setTimeout(() => {
-              setDeleteClass(
-                "keyboard_container__item__action--delete__inactive"
-              );
-            }, 100);
-          }}
-          className={deleteClass}
-        >
-          <span>DELETE</span>
-        </button>
+        {spaceKey(spaceBarClass, getInputText, setSpaceBarClass)}
+        {deleteKey(deleteClass, getInputText, setDeleteClass)}
       </div>
     </div>
   );
 };
 
+//Component
 export const Key = (getInputText) => {
   //States
   const [classKey, setClass] = useState(firstRowClass);

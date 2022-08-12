@@ -8,7 +8,7 @@ const result = (inputText) => {
   return (
     <div className={keyboardCSS.result_container}>
       <div className={keyboardCSS.result_contanier__value}>{inputText}</div>
-      <h1>Result</h1>
+      <h1>Resultado</h1>
     </div>
   );
 };
@@ -17,11 +17,12 @@ const keyboard = (getInputText) => {
   return (
     <div className={keyboardCSS.keyboard_contanier}>
       {Key(getInputText)}
-      <h1>Keyboard</h1>
+      <h1>Teclado</h1>
     </div>
   );
 };
 
+//Component
 export const Keyboard = () => {
   // let pressResult = "";
   const [inputText, updateInputText] = useState("");
@@ -39,9 +40,14 @@ export const Keyboard = () => {
   };
 
   return (
-    <div className={keyboardCSS.keyboard}>
-      {result(inputText)}
-      {keyboard(getInputText)}
+    <div className={keyboardCSS.main_content}>
+      <div className={keyboardCSS.title}>
+        <h1>Haz click en las teclas para escribir</h1>
+      </div>
+      <div className={keyboardCSS.keyboard}>
+        {result(inputText)}
+        {keyboard(getInputText)}
+      </div>
     </div>
   );
 };
