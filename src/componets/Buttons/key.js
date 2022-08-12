@@ -133,17 +133,73 @@ const thirdRowPrint = (setClass3, classKey3, getInputText) => {
   );
 };
 
+const fourRowPrint = (
+  deleteClass,
+  spaceBarClass,
+  setSpaceBarClass,
+  setDeleteClass,
+  getInputText
+) => {
+  return (
+    <div className="keyboard_container__item">
+      <div className="keyboard_container__item__action">
+        <button
+          onClick={() => {
+            getInputText(" ");
+            setSpaceBarClass(
+              "keyboard_container__item__action--spacebar__active"
+            );
+            setTimeout(() => {
+              setSpaceBarClass(
+                "keyboard_container__item__action--spacebar__inactive"
+              );
+            }, 100);
+          }}
+          className={spaceBarClass}
+        ></button>
+        <button
+          onClick={() => {
+            getInputText("backspace");
+            setDeleteClass("keyboard_container__item__action--delete__active");
+            setTimeout(() => {
+              setDeleteClass(
+                "keyboard_container__item__action--delete__inactive"
+              );
+            }, 100);
+          }}
+          className={deleteClass}
+        >
+          <span>DELETE</span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
 export const Key = (getInputText) => {
   //States
   const [classKey, setClass] = useState(firstRowClass);
   const [classKey2, setClass2] = useState(secondRowClass);
   const [classKey3, setClass3] = useState(thirdRowClass);
+  const [spaceBarClass, setSpaceBarClass] = useState(
+    "keyboard_container__item__action--spacebar__inactive"
+  );
+  const [deleteClass, setDeleteClass] = useState(
+    "keyboard_container__item__action--delete__inactive"
+  );
 
   return (
     <div className="keyboard_contanier">
       {firstRowPrint(setClass, classKey, getInputText)}
       {secondRowPrint(setClass2, classKey2, getInputText)}
       {thirdRowPrint(setClass3, classKey3, getInputText)}
+      {fourRowPrint(
+        deleteClass,
+        spaceBarClass,
+        setSpaceBarClass,
+        setDeleteClass,
+        getInputText
+      )}
     </div>
   );
 };

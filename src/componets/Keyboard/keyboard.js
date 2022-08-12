@@ -21,14 +21,21 @@ const keyboard = (getInputText) => {
     </div>
   );
 };
+
 export const Keyboard = () => {
   // let pressResult = "";
   const [inputText, updateInputText] = useState("");
 
   const getInputText = (text) => {
-    let result = inputText;
-    result += text;
-    updateInputText(result);
+    if (text === "backspace") {
+      let result = inputText;
+      const text = result.substring(0, result.length - 1);
+      updateInputText(text);
+    } else {
+      let result = inputText;
+      result += text;
+      updateInputText(result);
+    }
   };
 
   return (
