@@ -1,12 +1,13 @@
 //React imports
 import React from "react";
 import { useState } from "react";
+import keyboardCSS from "./KeyboardCSS.module.css";
 //Created Imports
 import { Key } from "./../Buttons/key";
 const result = (inputText) => {
   return (
-    <div className="result_container">
-      <div className="result_contanier__value">{inputText}</div>
+    <div className={keyboardCSS.result_container}>
+      <div className={keyboardCSS.result_contanier__value}>{inputText}</div>
       <h1>Result</h1>
     </div>
   );
@@ -14,7 +15,7 @@ const result = (inputText) => {
 
 const keyboard = (getInputText) => {
   return (
-    <div className="keyboard_contanier">
+    <div className={keyboardCSS.keyboard_contanier}>
       {Key(getInputText)}
       <h1>Keyboard</h1>
     </div>
@@ -31,7 +32,7 @@ export const Keyboard = () => {
   };
 
   return (
-    <div className="keyboard">
+    <div className={keyboardCSS.keyboard}>
       {result(inputText)}
       {keyboard(getInputText)}
     </div>

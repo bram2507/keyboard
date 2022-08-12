@@ -32,69 +32,38 @@
   height: 100vh;
 }
 
-.keyboard{
-  display: flex;
-  width: 85%;
-  min-height: 50vh;
-  flex-direction: column;
-  border: 2px solid lightgray;
-  border-radius: 5px;
+.keyboard_contanier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
 }
 
-.result_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-
+.keyboard_container__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    height: auto;
 }
 
-.result_contanier__value {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-  height: 30px;
-  border-radius: 5px;
-  border: 2px solid lightgray;
-  padding: 2vh;
-  margin-top: 2vh;
-}
-
-.keyboard_contanier{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-}
-
-.keyboard_container__item{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 85%;
-  height: auto;
-}
-
-.item-value{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 82px;
-  height: 75px;
-  border-radius: 5px;
-  border: 2px solid lightgrey;
-  background-color: aliceblue;
-  margin: 1vh;
+.item-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 75px;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    background-color: aliceblue;
+    margin: 1vh;
 }
 
 .item-value--focus {
-  display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 82px;
@@ -103,15 +72,8 @@
     border: 2px solid lightseagreen;
     background-color: aliceblue;
     margin: 1vh;
-  
-  margin: 1vh;
+    margin: 1vh;
 }
-
-
-
-
-
-
 .App-link {
   color: #61dafb;
 }

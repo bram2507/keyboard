@@ -1,0 +1,39 @@
+.result_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+}
+
+.result_contanier__value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid lightgray;
+  padding: 2vh;
+  margin-top: 2vh;
+}
+
+.keyboard_contanier{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.keyboard{
+  display: flex;
+  width: 85%;
+  min-height: 50vh;
+  flex-direction: column;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
